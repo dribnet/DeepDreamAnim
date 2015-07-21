@@ -295,6 +295,8 @@ def main(inputdir, outputdir, preview, octaves, octave_scale, iterations, jitter
 
 
 def extractVideo(inputdir, outputdir):
+    if not os.path.exists(outputdir):
+        os.makedirs(outputdir)
     print subprocess.Popen('ffmpeg -i ' + inputdir + ' -f image2 ' + outputdir + '/image-%06d.png', shell=True,
                            stdout=subprocess.PIPE).stdout.read()
 
