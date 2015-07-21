@@ -285,7 +285,7 @@ def main(inputdir, outputdir, preview, octaves, octave_scale, iterations, jitter
                         newimg = resizePicture(newframe, preview)
                     frame = newimg
                 else:
-                    frame = morphPicture(saveframe, newframe, blend, preview)
+                    frame = morphPicture(newframe, saveframe, blend, preview)
 
                 # setup next frame
                 frame = np.float32(frame)
